@@ -18,8 +18,11 @@ public class Security {
         }).authorizeHttpRequests(authorizeRequests ->{
             authorizeRequests.requestMatchers("/users/login").permitAll()
                     .requestMatchers("/users/register").permitAll()
+                    .requestMatchers("/users/conflcteo").permitAll()
                         .anyRequest().authenticated();
-                })
+            //EDITANDO EL MISMO ARCHIVO PARA VER SI EXISTEN CONFLICTOS
+
+        })
                 .build();
     }
 
