@@ -19,7 +19,9 @@ public class Security {
             authorizeRequests.requestMatchers("/users/login").permitAll()
                     .requestMatchers("/users/register").permitAll()
                         .anyRequest().authenticated();
-                })
+            //EDITANDO EL MISMO ARCHIVO PARA VER SI EXISTEN CONFLICTOS
+
+        })
                 .build();
     }
 
