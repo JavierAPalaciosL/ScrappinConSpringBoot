@@ -20,7 +20,9 @@ public class Security {
                     .requestMatchers("/users/register").permitAll()
                     .requestMatchers("/users/conflicto").permitAll()
                         .anyRequest().authenticated();
-                })
+            //EDITANDO EL MISMO ARCHIVO PARA VER SI EXISTEN CONFLICTOS
+
+        })
                 .build();
     }
 
