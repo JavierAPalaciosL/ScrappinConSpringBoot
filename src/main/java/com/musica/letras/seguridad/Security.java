@@ -18,6 +18,7 @@ public class Security {
         }).authorizeHttpRequests(authorizeRequests ->{
             authorizeRequests.requestMatchers("/users/login").permitAll()
                     .requestMatchers("/users/register").permitAll()
+                    .requestMatchers("/users/conflicto").permitAll()
                         .anyRequest().authenticated();
                 })
                 .build();
