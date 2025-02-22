@@ -1,5 +1,6 @@
 package com.musica.letras.seguridad;
 
+import com.musica.letras.servicios.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -10,6 +11,12 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class Security {
 
+    private CustomUserDetailsService userDetailsService;
+
+    public Security(CustomUserDetailsService userDetailsService) {
+        this.userDetailsService = userDetailsService;
+    }
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf(httpSecurityCsrfConfigurer ->
@@ -18,12 +25,14 @@ public class Security {
         }).authorizeHttpRequests(authorizeRequests ->{
             authorizeRequests.requestMatchers("/users/login").permitAll()
                     .requestMatchers("/users/register").permitAll()
-                    .requestMatchers("/users/conflcteo").permitAll()
                         .anyRequest().authenticated();
-            //EDITANDO EL MISMO ARCHIVO PARA VER SI EXISTEN CONFLICTOS
-
-        })
+                })
+                .formLogin(httpSecurityFormLoginConfigurer -> {
+                    httpSecurityFormLoginConfigurer.defaultSuccessUrl("/users/success", true);
+                }).userDetailsService(userDetailsService)
                 .build();
     }
+
+
 
 }

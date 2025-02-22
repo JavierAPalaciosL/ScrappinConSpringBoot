@@ -5,14 +5,17 @@ import com.musica.letras.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.crypto.password.*;
 
 @SpringBootApplication
 public class LetrrasApplication implements CommandLineRunner {
 
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public LetrrasApplication(UserRepository userRepository) {
+    public LetrrasApplication(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public static void main(String[] args) {
@@ -24,13 +27,14 @@ public class LetrrasApplication implements CommandLineRunner {
 
         UserEntity user = new UserEntity();
         user.setEmail("user@email.com");
-        user.setPassword("password");
+        user.setPassword(passwordEncoder.encode("123456"));
 
         UserEntity user2 = new UserEntity();
         user2.setEmail("user2@email.com");
-        user2.setPassword("password2");
+        user2.setPassword(passwordEncoder.encode("123456"));
 
         userRepository.save(user);
         userRepository.save(user2);
+        
     }
 }
