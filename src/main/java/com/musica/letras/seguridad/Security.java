@@ -40,4 +40,9 @@ public class Security {
         return "Hola";
     }
 
+    private String web(){
+        System.out.println("la web");
+        return "web";
+    }
+
 }
