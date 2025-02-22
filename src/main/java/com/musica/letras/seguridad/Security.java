@@ -16,7 +16,7 @@ public class Security {
     public Security(CustomUserDetailsService userDetailsService) {
         this.userDetailsService = userDetailsService;
     }
-
+    /*Cambiando el archivo de seguridad*/
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf(httpSecurityCsrfConfigurer ->
@@ -36,5 +36,8 @@ public class Security {
         return "adios";
     }
 
+    private String diHola(){
+        return "Hola";
+    }
 
 }
