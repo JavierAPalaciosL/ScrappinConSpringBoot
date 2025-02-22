@@ -2,6 +2,7 @@ package com.musica.letras.controller;
 
 import com.musica.letras.util.Minecraft;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,9 +19,9 @@ public class Lyrics {
         mc.setTitle(title);
         return ResponseEntity.ok(new HashMap<>() {{ put("letter ", mc.getLetter());}});
     }
-
-
-
-
-
+    
+    @GetMapping("/sayHello")
+    public String sayHello(){
+        return "hello";
+    } 
 }
