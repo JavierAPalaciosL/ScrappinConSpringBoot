@@ -16,7 +16,7 @@ public class Security {
     public Security(CustomUserDetailsService userDetailsService) {
         this.userDetailsService = userDetailsService;
     }
-
+    /*Cambiando el archivo de seguridad*/
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf(httpSecurityCsrfConfigurer ->
@@ -32,6 +32,19 @@ public class Security {
                 .build();
     }
 
+    private String diAdios(){
+        return "adios";
+    }
 
+    private String diHola(){
+        return "Hola";
+    }
+
+    private String web(){
+        System.out.println("la web");
+        System.out.println("la de wb");
+
+        return "web";
+    }
 
 }
