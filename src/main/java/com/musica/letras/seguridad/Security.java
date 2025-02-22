@@ -23,8 +23,7 @@ public class Security {
         {
             httpSecurityCsrfConfigurer.disable();
         }).authorizeHttpRequests(authorizeRequests ->{
-            authorizeRequests.requestMatchers("/users/login").permitAll()
-                    .requestMatchers("/users/register").permitAll()
+            authorizeRequests.requestMatchers("/users/register").permitAll()
                         .anyRequest().authenticated();
                 })
                 .formLogin(httpSecurityFormLoginConfigurer -> {
