@@ -32,6 +32,9 @@ public class Security {
                 .build();
     }
 
+    private String diAdios(){
+        return "adios";
+    }
 
 
 }
