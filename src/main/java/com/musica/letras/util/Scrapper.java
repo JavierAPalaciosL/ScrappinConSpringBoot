@@ -9,18 +9,18 @@ import org.jsoup.select.Elements;
 
 @Getter
 @Setter
-public class Minecraft {
+public class Scrapper {
 
     private String artist;
     private String title;
     private String url;
 
-    public Minecraft(String artist, String title) {
+    public Scrapper(String artist, String title) {
         this.artist = artist;
         this.title = title;
     }
 
-    public Minecraft() {
+    public Scrapper() {
         this("", "");
     }
 
