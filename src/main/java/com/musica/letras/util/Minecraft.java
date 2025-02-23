@@ -9,22 +9,23 @@ import org.jsoup.select.Elements;
 
 @Getter
 @Setter
-public class Scrapper {
+public class Minecraft {
 
     private String artist;
     private String title;
     private String url;
 
-    public Scrapper(String artist, String title) {
+    public Minecraft(String artist, String title) {
         this.artist = artist;
         this.title = title;
     }
 
-    public Scrapper() {
+    public Minecraft() {
         this("", "");
     }
 
     public String getLetter(){
+        System.out.println("Editando este archivo para generar un conflicto");
         this.url = "https://www.letras.com/"+this.artist+"/"+this.title+"/";
         String letter = "";
         try{

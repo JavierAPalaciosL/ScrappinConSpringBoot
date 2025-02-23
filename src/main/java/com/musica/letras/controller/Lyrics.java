@@ -1,6 +1,6 @@
 package com.musica.letras.controller;
 
-import com.musica.letras.util.Scrapper;
+import com.musica.letras.util.Minecraft;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,7 +13,7 @@ public class Lyrics {
 
     @PostMapping("/lyrics")
     public ResponseEntity<HashMap<Object, Object>> lyrics(@RequestParam String artist, @RequestParam String title) {
-        Scrapper mc = new Scrapper();
+        Minecraft mc = new Minecraft();
         mc.setArtist(artist);
         mc.setTitle(title);
         return ResponseEntity.ok(new HashMap<>() {{ put("letter ", mc.getLetter());}});
