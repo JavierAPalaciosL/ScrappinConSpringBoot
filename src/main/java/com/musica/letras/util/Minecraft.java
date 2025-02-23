@@ -25,6 +25,7 @@ public class Minecraft {
     }
 
     public String getLetter(){
+        System.out.println("modificando la prueba");
         this.url = "https://www.letras.com/"+this.artist+"/"+this.title+"/";
         String letter = "";
         try{
