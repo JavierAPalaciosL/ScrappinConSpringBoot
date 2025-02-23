@@ -5,6 +5,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.crypto.bcrypt.*;
+import org.springframework.security.crypto.password.*;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
@@ -32,19 +34,6 @@ public class Security {
                 .build();
     }
 
-    private String diAdios(){
-        return "adios";
-    }
 
-    private String diHola(){
-        return "Hola";
-    }
-
-    private String web(){
-        System.out.println("la web");
-        System.out.println("la de wb");
-
-        return "web";
-    }
 
 }
