@@ -35,6 +35,9 @@ public class LetrrasApplication implements CommandLineRunner {
 
         userRepository.save(user);
         userRepository.save(user2);
+
+        System.out.println("User has been saved");
+        System.out.println("add new line");
         
     }
 }
