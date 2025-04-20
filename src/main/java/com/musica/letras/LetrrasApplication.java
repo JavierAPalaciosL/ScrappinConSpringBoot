@@ -38,6 +38,6 @@ public class LetrrasApplication implements CommandLineRunner {
 
         System.out.println("User has been saved");
         System.out.println("add new line");
-        
+
     }
 }
